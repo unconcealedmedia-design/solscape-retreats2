@@ -62,17 +62,27 @@
     });
   });
 
-  /* ── Inquiry form ── */
+  /* ── Inquiry form — submits to Netlify Forms ── */
   const inquiryForm = document.querySelector('.inquiry-form');
   if (inquiryForm) {
     inquiryForm.addEventListener('submit', e => {
       e.preventDefault();
       const card = inquiryForm.closest('.form-card');
-      if (card) {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(inquiryForm)).toString(),
+      })
+      .then(() => {
         inquiryForm.style.display = 'none';
-        const success = card.querySelector('.form-success');
-        if (success) success.style.display = 'block';
-      }
+        if (card) {
+          const success = card.querySelector('.form-success');
+          if (success) success.style.display = 'block';
+        }
+      })
+      .catch(() => {
+        alert('Something went wrong — please email us directly at solscaperetreats@gmail.com');
+      });
     });
   }
 

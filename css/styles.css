@@ -116,6 +116,7 @@ nav {
 }
 
 .logo-mark { width: 36px; height: 36px; }
+.logo-img { height: 44px; width: auto; display: block; }
 
 .logo-text {
   font-family: 'Cormorant Garamond', serif;

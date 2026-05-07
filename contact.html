@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — SolScape Retreats</title>
-  <meta name="description" content="Get in touch with SolScape Retreats. Ask a question, register interest, or grab your €50 first-retreat discount.">
+  <meta name="description" content="Get in touch with SolScape Retreats. Ask a question, register interest, or send an enquiry about upcoming retreats.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
@@ -14,19 +14,7 @@
   <!-- NAV -->
   <nav>
     <a href="index.html" class="logo">
-      <svg class="logo-mark" viewBox="0 0 38 38" fill="none">
-        <circle cx="19" cy="14" r="7" fill="#C2784A" opacity="0.9"/>
-        <line x1="19" y1="2" x2="19" y2="5" stroke="#C2784A" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="19" y1="23" x2="19" y2="26" stroke="#C2784A" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="7" y1="14" x2="10" y2="14" stroke="#C2784A" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="28" y1="14" x2="31" y2="14" stroke="#C2784A" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="10.5" y1="5.5" x2="12.6" y2="7.6" stroke="#C2784A" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="25.4" y1="20.4" x2="27.5" y2="22.5" stroke="#C2784A" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="27.5" y1="5.5" x2="25.4" y2="7.6" stroke="#C2784A" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="12.6" y1="20.4" x2="10.5" y2="22.5" stroke="#C2784A" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M6 34 Q19 24 32 34" stroke="#7A5C40" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-      </svg>
-      <span class="logo-text">Sol<span>Scape</span></span>
+      <img src="images/solscape-logo.png" alt="SolScape Retreats" class="logo-img">
     </a>
     <ul class="nav-links">
       <li class="nav-item has-dropdown">
@@ -72,14 +60,14 @@
 
   <!-- NEWSLETTER BAND -->
   <section class="newsletter">
-    <h2>Get €50 off your<br>first retreat</h2>
-    <p>Sign up for our newsletter and receive an exclusive discount code — plus first access to new dates and destinations.</p>
+    <h2>Sign up for our<br>newsletter</h2>
+    <p>Be the first to hear about new retreat dates, destinations, and SolScape updates.</p>
     <form class="newsletter-form" novalidate>
       <input type="email" placeholder="Your email address" required>
-      <button type="submit">Claim Discount</button>
+      <button type="submit">Subscribe</button>
     </form>
     <p class="newsletter-fine">We respect your privacy. Unsubscribe anytime.</p>
-    <p class="newsletter-success">Check your inbox — your discount code is on its way ✦</p>
+    <p class="newsletter-success">You're on the list — we'll be in touch ✦</p>
   </section>
 
   <!-- CONTACT FORM -->
@@ -88,30 +76,33 @@
       <div class="form-card" style="margin-top: 0;">
         <h3>Send a Message</h3>
         <p>Ask us anything — about a retreat, what to expect, whether it's right for you. No question is too small.</p>
-        <form class="inquiry-form" novalidate>
+        <form class="inquiry-form" name="contact" data-netlify="true" novalidate>
+          <input type="hidden" name="form-name" value="contact">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
-              <input type="text" id="name" placeholder="Your name" required>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
             </div>
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" placeholder="you@email.com" required>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required>
             </div>
           </div>
           <div class="form-group">
             <label for="retreat">I'm interested in…</label>
-            <select id="retreat">
+            <select id="retreat" name="retreat">
               <option value="">— Select a retreat —</option>
-              <option value="croatia">Croatia — May 2026</option>
-              <option value="spain">Spain — 2026 (TBC)</option>
-              <option value="tuscany">Tuscany — 2026 (TBC)</option>
+              <option value="greece">Greece — October 2026</option>
+              <option value="kenya">Kenya — November 2026</option>
+              <option value="morocco">Morocco — February 2027</option>
+              <option value="provence">France Provence — April 2027</option>
+              <option value="geneva">Geneva — July 2027</option>
               <option value="general">General question</option>
             </select>
           </div>
           <div class="form-group">
             <label for="message">Your Message</label>
-            <textarea id="message" placeholder="Tell us what's on your mind…" style="min-height: 140px;"></textarea>
+            <textarea id="message" name="message" placeholder="Tell us what's on your mind…" style="min-height: 140px;"></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%; text-align:center;">Send Message</button>
         </form>
@@ -130,6 +121,9 @@
         <a href="https://ig.me/m/solscape_retreats" target="_blank" class="social-link">
           DM to book directly
         </a>
+        <a href="mailto:solscaperetreats@gmail.com" class="social-link">
+          solscaperetreats@gmail.com
+        </a>
       </div>
     </div>
   </section>
@@ -139,7 +133,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <span class="footer-logo">Sol<span>Scape</span> Retreats</span>
-        <p class="footer-tagline">Movement, Art &amp; Magic. Small-group retreats in the world's most beautiful places.</p>
+        <p class="footer-tagline">Retreats in the world's most beautiful places.</p>
       </div>
       <div class="footer-col">
         <h5>Retreats</h5>
@@ -173,7 +167,7 @@
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
           </svg>
         </a>
-        <a href="mailto:hello@solscaperetreats.com" aria-label="Email">
+        <a href="mailto:solscaperetreats@gmail.com" aria-label="Email">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
