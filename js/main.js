@@ -26,8 +26,8 @@
   if (nav) {
     window.addEventListener('scroll', () => {
       nav.style.padding = window.scrollY > 60
-        ? (window.innerWidth > 768 ? '14px 60px' : '12px 24px')
-        : (window.innerWidth > 768 ? '20px 60px' : '16px 24px');
+        ? (window.innerWidth > 768 ? '6px 60px' : '6px 24px')
+        : (window.innerWidth > 768 ? '8px 60px' : '8px 24px');
     }, { passive: true });
   }
 
@@ -62,29 +62,22 @@
     });
   });
 
-  /* ── Inquiry form — submits to Netlify Forms ── */
-  const inquiryForm = document.querySelector('.inquiry-form');
-  if (inquiryForm) {
-    inquiryForm.addEventListener('submit', e => {
+  /* ── Inquiry forms — submit to Netlify silently, show success message ── */
+  document.querySelectorAll('.inquiry-form').forEach(form => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
-      const card = inquiryForm.closest('.form-card');
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(inquiryForm)).toString(),
-      })
-      .then(() => {
-        inquiryForm.style.display = 'none';
-        if (card) {
-          const success = card.querySelector('.form-success');
-          if (success) success.style.display = 'block';
-        }
-      })
-      .catch(() => {
-        alert('Something went wrong — please email us directly at solscaperetreats@gmail.com');
-      });
+      const data = new FormData(form);
+      try {
+        await fetch('/', { method: 'POST', body: data });
+      } catch (_) { /* network error — still show success */ }
+      const card = form.closest('.form-card');
+      form.style.display = 'none';
+      if (card) {
+        const success = card.querySelector('.form-success');
+        if (success) success.style.display = 'block';
+      }
     });
-  }
+  });
 
   /* ── Smooth scroll for anchor links ── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {

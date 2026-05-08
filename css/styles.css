@@ -5,15 +5,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream:     #F8F3ED;
-  --linen:     #EDE5D8;
+  /* ── Brand-guideline exact colours ── */
+  --cream:     #F9F5EA;
+  --linen:     #EDE8DC;
   --sand:      #D9C9B4;
-  --terra:     #C2784A;
-  --terra-dk:  #9C5A30;
-  --mocha:     #7A5C40;
+  --terra:     #CC9A67;
+  --terra-dk:  #A07A50;
+  --mocha:     #826D54;
   --charcoal:  #2C1F14;
-  --sage:      #7A8C6E;
-  --sage-lt:   #C4CEBA;
+  --sage:      #B6B093;
+  --sage-lt:   #D6DACD;
   --gold:      #BF9A5E;
 }
 
@@ -103,10 +104,10 @@ section { padding: 100px 40px; }
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 60px;
-  background: rgba(248,243,237,0.92);
+  padding: 8px 60px;
+  background: rgba(249,245,234,0.92);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(193,120,74,0.12);
+  border-bottom: 1px solid rgba(204,154,103,0.14);
   transition: padding 0.3s;
 }
 
@@ -116,7 +117,7 @@ nav {
 }
 
 .logo-mark { width: 36px; height: 36px; }
-.logo-img { height: 44px; width: auto; display: block; }
+.logo-img { max-width: 320px; max-height: 90px; width: auto; height: auto; display: block; filter: none; mix-blend-mode: multiply; }
 
 .logo-text {
   font-family: 'Cormorant Garamond', serif;
@@ -678,7 +679,7 @@ nav {
   padding: 100px 40px;
   text-align: center;
   background:
-    radial-gradient(ellipse 70% 80% at 50% 50%, rgba(194,120,74,0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 80% at 50% 50%, rgba(204,154,103,0.14) 0%, transparent 70%),
     var(--cream);
 }
 .cta-band h2 {
@@ -1013,9 +1014,11 @@ footer {
 }
 .team-card { background: var(--cream); border-radius: 4px; overflow: hidden; }
 .team-photo {
-  height: 320px;
-  background-size: cover;
-  background-position: center top;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 .team-card-body { padding: 28px; }
 .team-card-body h3 {
@@ -1131,6 +1134,57 @@ footer {
   text-align: center;
 }
 
+/* ─── FOOTER LOGO IMAGE ─── */
+.footer-logo-img {
+  max-width: 270px;
+  max-height: 90px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin-bottom: 14px;
+  opacity: 0.88;
+}
+
+/* ─── HERO BRAND WATERMARK ─── */
+.hero-brand-mark {
+  width: 110px;
+  height: auto;
+  opacity: 0.65;
+  margin-top: 28px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── PHILOSOPHY / HOSTS SECTIONS ─── */
+.philosophy-banner {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 0;
+}
+
+.hosts-section { background: var(--cream); }
+.hosts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 52px;
+}
+.host-card {
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--linen);
+}
+.host-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
@@ -1139,7 +1193,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-  nav { padding: 16px 24px; }
+  nav { padding: 8px 24px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   section { padding: 72px 24px; }
@@ -1172,6 +1226,7 @@ footer {
   .newsletter-form button { width: 100%; padding: 14px; }
 
   .contact-hero { padding: 120px 24px 80px; }
+  .hosts-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {

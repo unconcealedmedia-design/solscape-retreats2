@@ -60,6 +60,7 @@
       <p class="sub">Adriatic Coast &nbsp;·&nbsp; Croatia</p>
       <h1>Cavtat<br>Retreat</h1>
       <div class="dates-badge">May 10–15, 2026 &nbsp;·&nbsp; 6 Days</div>
+      <img src="../images/solscape-logo.png" class="hero-brand-mark" alt="SolScape">
     </div>
   </div>
 
@@ -168,8 +169,9 @@
     <div class="container">
       <div class="form-card">
         <h3>Express Interest</h3>
-        <p>Fill in the form below and we'll be in touch within 48 hours with availability, pricing, and next steps.</p>
-        <form class="inquiry-form" novalidate>
+        <p>Fill in the form below and we'll be in touch within 24 hours with availability, pricing, and next steps.</p>
+        <form class="inquiry-form" name="inquiry-croatia" data-netlify="true" novalidate>
+          <input type="hidden" name="form-name" value="inquiry-croatia">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -201,7 +203,7 @@
           <button type="submit" class="btn btn-primary" style="width:100%; text-align:center;">Send Enquiry</button>
         </form>
         <div class="form-success">
-          Thank you — we'll be in touch within 48 hours ✦
+          Thank you — we'll be in touch within 24 hours ✦
         </div>
       </div>
     </div>
@@ -241,7 +243,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="footer-logo">Sol<span>Scape</span> Retreats</span>
+        <img src="../images/solscape-logo.png" class="footer-logo-img" alt="SolScape Retreats">
         <p class="footer-tagline">Movement, Art &amp; Magic. Small-group retreats in the world's most beautiful places.</p>
       </div>
       <div class="footer-col">
@@ -277,10 +279,10 @@
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
           </svg>
         </a>
-        <a href="mailto:solscaperetreats@gmail.com" aria-label="Email">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=solscaperetreats@gmail.com" target="_blank" aria-label="Email">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2,4 12,13 22,4"/>
           </svg>
         </a>
       </div>
